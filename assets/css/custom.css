@@ -1,10 +1,9 @@
--webkit-keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-250px * 7));
-  }
+.products .card {
+  transition: .3s;
+}
+
+.products .card:hover {
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
 }
 
 @keyframes scroll {
@@ -19,10 +18,9 @@
   background: white;
   box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
   height: 100px;
-  margin: auto;
   overflow: hidden;
   position: relative;
-  width: 960px;
+  width: 100%;
 }
 .slider::before, .slider::after {
   background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
