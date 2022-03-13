@@ -1,10 +1,3 @@
-/**
-* Template Name: Medicio - v4.7.0
-* Template URL: https://bootstrapmade.com/medicio-free-bootstrap-theme/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -134,6 +127,8 @@ h1, h2, h3, h4, h5, h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
+  position: sticky; 
+  top: 10px;
   background: #fff;
   transition: all 0.5s;
   z-index: 997;
@@ -198,6 +193,7 @@ h1, h2, h3, h4, h5, h6 {
 */
 .navbar {
   padding: 0;
+  position: static;
 }
 .navbar ul {
   margin: 0;
@@ -239,7 +235,6 @@ h1, h2, h3, h4, h5, h6 {
   padding: 10px 0;
   z-index: 99;
   opacity: 0;
-  visibility: hidden;
   background: #fff;
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
   transition: 0.3s;
@@ -288,14 +283,14 @@ h1, h2, h3, h4, h5, h6 {
 */
 .mobile-nav-toggle {
   color: #555555;
-  font-size: 28px;
+  font-size: 35px;
   cursor: pointer;
   display: none;
   line-height: 0;
   transition: 0.5s;
 }
 .mobile-nav-toggle.bi-x {
-  color: #fff;
+  color: #555555;
 }
 
 @media (max-width: 991px) {
@@ -304,37 +299,24 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .navbar ul {
-    display: none;
+    display: block;
+  position: absolute;
+  box-shadow: 0 7px 13px -2px rgb(0 0 0 / 10%);
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  background-color: #fff;
+  transition: 0.3s;
   }
 }
 .navbar-mobile {
-  position: fixed;
-  overflow: hidden;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  background: rgba(60, 60, 60, 0.9);
+  position: static;
   transition: 0.3s;
-  z-index: 999;
-}
-.navbar-mobile .mobile-nav-toggle {
-  position: absolute;
-  top: 15px;
-  right: 15px;
 }
 .navbar-mobile ul {
-  display: block;
-  position: absolute;
-  top: 55px;
-  right: 15px;
-  bottom: 15px;
-  left: 15px;
-  padding: 10px 0;
-  border-radius: 8px;
-  background-color: #fff;
-  overflow-y: auto;
-  transition: 0.3s;
+  height: 180px;
 }
 .navbar-mobile a, .navbar-mobile a:focus {
   padding: 10px 20px;
@@ -667,37 +649,6 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Cta
---------------------------------------------------------------*/
-.cta {
-  background: #3fbbc0;
-  color: #fff;
-  background-size: cover;
-  padding: 60px 0;
-}
-.cta h3 {
-  font-size: 28px;
-  font-weight: 700;
-}
-.cta .cta-btn {
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  letter-spacing: 1px;
-  display: inline-block;
-  padding: 10px 35px;
-  border-radius: 25px;
-  transition: 0.5s;
-  margin-top: 10px;
-  border: 2px solid #fff;
-  color: #fff;
-}
-.cta .cta-btn:hover {
-  background: #fff;
-  color: #3fbbc0;
-}
-
-/*--------------------------------------------------------------
 # About Us
 --------------------------------------------------------------*/
 .about .content h3 {
@@ -847,165 +798,7 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Appointments
---------------------------------------------------------------*/
-.appointment .php-email-form {
-  width: 100%;
-}
-.appointment .php-email-form .form-group {
-  padding-bottom: 8px;
-}
-.appointment .php-email-form .validate {
-  display: none;
-  color: red;
-  margin: 0 0 15px 0;
-  font-weight: 400;
-  font-size: 13px;
-}
-.appointment .php-email-form .error-message {
-  display: none;
-  color: #fff;
-  background: #ed3c0d;
-  text-align: left;
-  padding: 15px;
-  font-weight: 600;
-}
-.appointment .php-email-form .error-message br + br {
-  margin-top: 25px;
-}
-.appointment .php-email-form .sent-message {
-  display: none;
-  color: #fff;
-  background: #18d26e;
-  text-align: center;
-  padding: 15px;
-  font-weight: 600;
-}
-.appointment .php-email-form .loading {
-  display: none;
-  background: #fff;
-  text-align: center;
-  padding: 15px;
-}
-.appointment .php-email-form .loading:before {
-  content: "";
-  display: inline-block;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  margin: 0 10px -6px 0;
-  border: 3px solid #18d26e;
-  border-top-color: #eee;
-  -webkit-animation: animate-loading 1s linear infinite;
-  animation: animate-loading 1s linear infinite;
-}
-.appointment .php-email-form input, .appointment .php-email-form textarea, .appointment .php-email-form select {
-  border-radius: 0;
-  box-shadow: none;
-  font-size: 14px;
-  padding: 10px !important;
-}
-.appointment .php-email-form input:focus, .appointment .php-email-form textarea:focus, .appointment .php-email-form select:focus {
-  border-color: #3fbbc0;
-}
-.appointment .php-email-form input, .appointment .php-email-form select {
-  height: 44px;
-}
-.appointment .php-email-form textarea {
-  padding: 10px 12px;
-}
-.appointment .php-email-form button[type=submit] {
-  background: #3fbbc0;
-  border: 0;
-  padding: 10px 35px;
-  color: #fff;
-  transition: 0.4s;
-  border-radius: 50px;
-}
-.appointment .php-email-form button[type=submit]:hover {
-  background: #52c2c6;
-}
-
-/*--------------------------------------------------------------
-# Departments
---------------------------------------------------------------*/
-.departments .nav-tabs {
-  border: 0;
-}
-.departments .nav-link {
-  border: 0;
-  padding: 20px;
-  color: #555555;
-  border-radius: 0;
-  border-left: 5px solid #fff;
-  cursor: pointer;
-}
-.departments .nav-link h4 {
-  font-size: 18px;
-  font-weight: 600;
-  transition: 0.3s;
-}
-.departments .nav-link p {
-  font-size: 14px;
-  margin-bottom: 0;
-}
-.departments .nav-link:hover h4 {
-  color: #3fbbc0;
-}
-.departments .nav-link.active {
-  background: #f7fcfc;
-  border-color: #3fbbc0;
-}
-.departments .nav-link.active h4 {
-  color: #3fbbc0;
-}
-.departments .tab-pane.active {
-  -webkit-animation: slide-down 0.5s ease-out;
-  animation: slide-down 0.5s ease-out;
-}
-.departments .tab-pane img {
-  float: left;
-  max-width: 300px;
-  padding: 0 15px 15px 0;
-}
-@media (max-width: 768px) {
-  .departments .tab-pane img {
-    float: none;
-    padding: 0 0 15px 0;
-    max-width: 100%;
-  }
-}
-.departments .tab-pane h3 {
-  font-size: 26px;
-  font-weight: 600;
-  margin-bottom: 20px;
-  color: #3fbbc0;
-}
-.departments .tab-pane p {
-  color: #777777;
-}
-.departments .tab-pane p:last-child {
-  margin-bottom: 0;
-}
-@-webkit-keyframes slide-down {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes slide-down {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-/*--------------------------------------------------------------
-# Testimonials
+# Feedback section
 --------------------------------------------------------------*/
 .testimonials .testimonials-carousel, .testimonials .testimonials-slider {
   overflow: hidden;
@@ -1074,7 +867,7 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Doctors
+# Partners
 --------------------------------------------------------------*/
 .doctors .member {
   margin-bottom: 20px;
@@ -1179,103 +972,6 @@ section {
     transform: scale(1.2);
     margin-top: 10px;
   }
-}
-
-/*--------------------------------------------------------------
-# Pricing
---------------------------------------------------------------*/
-.pricing .box {
-  padding: 20px;
-  background: #fff;
-  text-align: center;
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.12);
-  border-radius: 4px;
-  position: relative;
-  overflow: hidden;
-}
-.pricing h3 {
-  font-weight: 400;
-  margin: -20px -20px 20px -20px;
-  padding: 20px 15px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #777777;
-  background: #f8f8f8;
-}
-.pricing h4 {
-  font-size: 36px;
-  color: #3fbbc0;
-  font-weight: 600;
-  font-family: "Poppins", sans-serif;
-  margin-bottom: 20px;
-}
-.pricing h4 sup {
-  font-size: 20px;
-  top: -15px;
-  left: -3px;
-}
-.pricing h4 span {
-  color: #bababa;
-  font-size: 16px;
-  font-weight: 300;
-}
-.pricing ul {
-  padding: 0;
-  list-style: none;
-  color: #444444;
-  text-align: center;
-  line-height: 20px;
-  font-size: 14px;
-}
-.pricing ul li {
-  padding-bottom: 16px;
-}
-.pricing ul i {
-  color: #3fbbc0;
-  font-size: 18px;
-  padding-right: 4px;
-}
-.pricing ul .na {
-  color: #ccc;
-  text-decoration: line-through;
-}
-.pricing .btn-wrap {
-  margin: 20px -20px -20px -20px;
-  padding: 20px 15px;
-  background: #f8f8f8;
-  text-align: center;
-}
-.pricing .btn-buy {
-  background: #3fbbc0;
-  display: inline-block;
-  padding: 8px 35px 10px 35px;
-  border-radius: 4px;
-  color: #fff;
-  transition: none;
-  font-size: 14px;
-  font-weight: 400;
-  font-family: "Roboto", sans-serif;
-  font-weight: 600;
-  transition: 0.3s;
-}
-.pricing .btn-buy:hover {
-  background: #65c9cd;
-}
-.pricing .featured h3 {
-  color: #fff;
-  background: #3fbbc0;
-}
-.pricing .advanced {
-  width: 200px;
-  position: absolute;
-  top: 18px;
-  right: -68px;
-  transform: rotate(45deg);
-  z-index: 1;
-  font-size: 14px;
-  padding: 1px 0 3px 0;
-  background: #3fbbc0;
-  color: #fff;
 }
 
 /*--------------------------------------------------------------
